@@ -1,5 +1,5 @@
 import {
-  useRef, useEffect, useState, useCallback
+  useRef, useEffect, useState, useCallback,
 } from 'react';
 
 const useAnimationFrame = (callback) => {
@@ -27,9 +27,9 @@ const useAnimationFrame = (callback) => {
 };
 
 const makeLinearGradient = (base, rgbs) => {
-  const rgbStrings = rgbs.map(({ r, g, b }, i) => `rgb(${r}, ${g}, ${b}) ${base + i * 100}%`)
-  return `linear-gradient(90deg, ${rgbStrings.join(',')})`
-}
+  const rgbStrings = rgbs.map(({ r, g, b }, i) => `rgb(${r}, ${g}, ${b}) ${base + i * 100}%`);
+  return `linear-gradient(90deg, ${rgbStrings.join(',')})`;
+};
 
 export default function GradientText({ text, rgbs }) {
   const [base, setBase] = useState(-(rgbs.length - 1) * 100);
@@ -46,7 +46,7 @@ export default function GradientText({ text, rgbs }) {
       className="bg-clip-text"
       style={{
         backgroundImage: makeLinearGradient(base, rgbs),
-        WebkitTextFillColor: 'transparent'
+        WebkitTextFillColor: 'transparent',
       }}
     >
       {text}
