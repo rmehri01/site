@@ -32,7 +32,7 @@ const makeLinearGradient = (base, rgbs) => {
 };
 
 export default function GradientText({
-  text, rgbs, delay = 0, otherClasses = '',
+  text, rgbs, delay = 0,
 }) {
   const [base, setBase] = useState(-(rgbs.length - 1) * 100);
   const [done, setDone] = useState(false);
@@ -50,10 +50,11 @@ export default function GradientText({
 
   return (
     <strong
-      className={`bg-clip-text ${otherClasses}`}
+      className="bg-clip-text"
       style={{
         backgroundImage: makeLinearGradient(base, rgbs),
         WebkitTextFillColor: 'transparent',
+        WebkitBoxDecorationBreak: 'clone',
       }}
     >
       {text}
