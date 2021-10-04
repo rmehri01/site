@@ -48,7 +48,7 @@ export default function GradientText({ text, rgbs, delay = 0 }) {
 
   return (
     <strong
-      className="bg-clip-text"
+      className="bg-clip-text inline-block"
       style={{
         backgroundImage: makeLinearGradient(base, rgbs),
         WebkitTextFillColor: 'transparent',
