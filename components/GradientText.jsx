@@ -2,7 +2,7 @@ import {
   useRef, useEffect, useState, useCallback,
 } from 'react';
 
-const useAnimationFrame = (callback) => {
+const useAnimationFrame = (callback, delay, done) => {
   // Use useRef for mutable variables that we want to persist
   // without triggering a re-render on their change
   const requestRef = useRef();
@@ -10,12 +10,12 @@ const useAnimationFrame = (callback) => {
 
   useEffect(() => {
     const animate = (time) => {
-      if (previousTimeRef.current !== undefined) {
+      if (previousTimeRef.current !== undefined && delay < time) {
         const deltaTime = time - previousTimeRef.current;
         callback(deltaTime);
       }
 
-      if (time < 10000) {
+      if (!done) {
         previousTimeRef.current = time;
         requestRef.current = requestAnimationFrame(animate);
       }
@@ -23,7 +23,7 @@ const useAnimationFrame = (callback) => {
 
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
-  }, [callback]);
+  }, [callback, delay, done]);
 };
 
 const makeLinearGradient = (base, rgbs) => {
@@ -31,15 +31,20 @@ const makeLinearGradient = (base, rgbs) => {
   return `linear-gradient(90deg, ${rgbStrings.join(',')})`;
 };
 
-export default function GradientText({ text, rgbs }) {
+export default function GradientText({ text, rgbs, delay = 0 }) {
   const [base, setBase] = useState(-(rgbs.length - 1) * 100);
+  const [done, setDone] = useState(false);
 
   const increaseBase = (deltaTime) => setBase((prevBase) => {
-    const delta = prevBase < 0 ? deltaTime * 0.15 : 0;
+    let delta = deltaTime * 0.15;
+    if (prevBase >= 0) {
+      delta = 0;
+      setDone(true);
+    }
     return prevBase + delta;
   });
   const increaseBaseMemoized = useCallback(increaseBase, []);
-  useAnimationFrame(increaseBaseMemoized);
+  useAnimationFrame(increaseBaseMemoized, delay, done);
 
   return (
     <strong
