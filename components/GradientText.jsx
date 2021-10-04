@@ -31,7 +31,9 @@ const makeLinearGradient = (base, rgbs) => {
   return `linear-gradient(90deg, ${rgbStrings.join(',')})`;
 };
 
-export default function GradientText({ text, rgbs, delay = 0 }) {
+export default function GradientText({
+  text, rgbs, delay = 0, otherClasses = '',
+}) {
   const [base, setBase] = useState(-(rgbs.length - 1) * 100);
   const [done, setDone] = useState(false);
 
@@ -48,7 +50,7 @@ export default function GradientText({ text, rgbs, delay = 0 }) {
 
   return (
     <strong
-      className="bg-clip-text inline-block"
+      className={`bg-clip-text ${otherClasses}`}
       style={{
         backgroundImage: makeLinearGradient(base, rgbs),
         WebkitTextFillColor: 'transparent',

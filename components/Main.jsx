@@ -42,13 +42,13 @@ export default function Main() {
           <Paragraph>
             I am a student at the University of British Columbia interested in
             {' '}
-            <GradientText text="programming language theory" rgbs={rgbs} delay={2000} />
+            <GradientText text="programming language theory" rgbs={rgbs} delay={2000} otherClasses="inline-block" />
             ,
             {' '}
-            <GradientText text="compilers" rgbs={rgbs} delay={3000} />
+            <GradientText text="compilers" rgbs={rgbs} delay={3000} otherClasses="inline-block" />
             , and
             {' '}
-            <GradientText text="developer tooling" rgbs={rgbs} delay={4000} />
+            <GradientText text="developer tooling" rgbs={rgbs} delay={4000} otherClasses="inline-block" />
             .
           </Paragraph>
 
