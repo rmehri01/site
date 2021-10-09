@@ -14,13 +14,13 @@ export default function Meta() {
       <meta property="og:url" content="https://www.ryanmehri.dev" />
       <meta property="og:title" content="Ryan Mehri :: Software Engineer" />
       <meta property="og:description" content="Hey there! I'm Ryan, a computer science student interested in programming language theory, compilers, and developer tooling." />
-      <meta property="og:image" content="https://www.ryanmehri.dev/profile.jpg" />
+      <meta property="og:image" content="https://www.ryanmehri.dev/lambda.jpg" />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.ryanmehri.dev" />
       <meta property="twitter:title" content="Ryan Mehri :: Software Engineer" />
       <meta property="twitter:description" content="Hey there! I'm Ryan, a computer science student interested in programming language theory, compilers, and developer tooling." />
-      <meta property="twitter:image" content="https://www.ryanmehri.dev/profile.jpg" />
+      <meta property="twitter:image" content="https://www.ryanmehri.dev/lambda.jpg" />
 
       <link rel="icon" href="/favicon.ico" />
       <style>{dom.css()}</style>
