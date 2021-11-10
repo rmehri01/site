@@ -20,7 +20,7 @@
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "@types/react": "^17.0.30",
+    "@types/react": "^17.0.34",
     "autoprefixer": "^10.4.0",
     "eslint": "<8.0.0",
     "eslint-config-airbnb": "^18.2.1",
