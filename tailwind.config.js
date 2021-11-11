@@ -8,11 +8,11 @@ module.exports = {
         draw: {
           '0%': { transform: 'scaleX(0)' },
           '100%': { transform: 'scaleX(1)' },
-        }
+        },
       },
       animation: {
         draw: 'draw 1.5s ease',
-      }
+      },
     },
   },
   variants: {
