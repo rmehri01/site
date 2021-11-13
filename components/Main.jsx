@@ -22,14 +22,14 @@ export default function Main() {
   ];
 
   return (
-    <main className="flex justify-center items-center w-full flex-1 p-2 lg:p-10 xl:p-20">
-      <div className="flex flex-col lg:flex-row-reverse bg-gray-100 rounded-lg p-4 max-w-screen-2xl">
-        <div className="relative w-full min-w-[35%] h-96 lg:h-auto">
-          <Image className="rounded-lg" src={profilePic} layout="fill" objectFit="cover" alt="A photo of me!" priority />
+    <main className="flex justify-center items-center w-full flex-1 p-4 sm:p-10 xl:p-20">
+      <div className="flex flex-col lg:flex-row-reverse bg-gray-100 rounded-lg p-4 sm:p-10 max-w-screen-2xl">
+        <div className="relative w-full min-w-[35%] sm:max-w-sm lg:max-w-none px-11 pt-3 m-auto lg:p-0">
+          <Image className="rounded-lg" src={profilePic} alt="A photo of me!" priority />
         </div>
 
-        <div className="flex justify-center flex-col m-2 md:m-5 xl:m-10">
-          <h1 className="text-5xl md:text-6xl 2xl:text-7xl font-bold">
+        <div className="flex justify-center flex-col lg:mr-10">
+          <h1 className="text-[2.75rem] leading-[3rem] sm:text-6xl 2xl:text-7xl font-bold">
             <GradientText text="Hey there!" rgbs={rgbs} />
             {' '}
             👋
