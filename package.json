@@ -22,7 +22,7 @@
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "@types/react": "^17.0.36",
+    "@types/react": "^17.0.37",
     "autoprefixer": "^10.4.0",
     "critters": "^0.0.14",
     "eslint": "<8.0.0",
