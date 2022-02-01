@@ -19,7 +19,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sharp": "^0.29.3",
-    "tailwindcss": "^3.0.15"
+    "tailwindcss": "^3.0.18"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",
@@ -32,6 +32,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "postcss": "^8.4.5"
+    "postcss": "^8.4.6"
   }
 }
